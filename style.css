@@ -22,6 +22,17 @@ header {
     display: none;
 }
 
+#newuserform {
+    width: 250px;
+    height: 200px;
+    margin-bottom: 25px;
+    padding: 25px;
+    background-color: whitesmoke;
+    border: 1px solid orangered;
+    box-shadow: 0 0 10px orange;
+    display: none;
+}
+
 main {
     background-color: whitesmoke;
     margin: 25px;

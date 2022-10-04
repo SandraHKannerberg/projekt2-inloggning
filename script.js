@@ -25,15 +25,28 @@ const statusText = document.querySelector(".statustext");
 const smallHeading = document.querySelector(".smallheading");
 const textArea = document.querySelector(".textarea");
 const logInForm = document.getElementById("loginform");
+const newUserForm = document.getElementById("newuserform");
 const username = document.getElementById("username");
 const password = document.getElementById("password");
 const btnIn = document.getElementById("btn-in");
 const btnOut = document.getElementById("btn-out");
+const btnNewUserForm = document.getElementById("btn-newuserform");
 const headingFooter = document.querySelector(".headingfooter");
 const textFooter = document.querySelector(".textfooter");
+const inputNewUser = document.getElementById("inputnewuser");
+const inputNewPassword = document.getElementById("inputnewpassword");
+
+localStorage.setItem("user", JSON.stringify(objUser));
+
+const newUser = {
+    username: inputNewUser.value,
+    password: inputNewPassword.value
+}
 
 btnIn.addEventListener("click", checkLogIn);
 btnOut.addEventListener("click", logOut);
+btnNewUserForm.addEventListener("click", becomeNewUser);
+
 
 function inIt() {
     if (localStorage.getItem("username")) {
@@ -87,5 +100,18 @@ function logOut() {
     username.value = "";
     password.value = "";
     localStorage.removeItem("username");
+}
+
+function becomeNewUser() {
+    document.getElementById("newuserform").style.display = "block";
+    document.getElementById("btn-newuserform").style.display = "none";
+    document.getElementById("btn-out").style.display = "none";
+    document.querySelector(".statustext").innerText = "SNART ÄR DU MEDLEM";
+    document.querySelector(".statustext").style.color = "orange";
+    document.querySelector(".smallheading").innerText = "Vad roligt att du vill bli medlem hos AmazingPage";
+    document.querySelector(".smallheading").style.color = "orange";
+    document.getElementById("loginform").style.display = "none";
+    document.querySelector(".textarea").innerText = "Vänligen välj ett användarnamn och ett lösenord så är du snart medlem hos oss och kan ta del av unika medlemserbjudanden!";
+    document.getElementById("btn-out").style.display = "none";
 }
 

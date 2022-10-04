@@ -5,35 +5,41 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inloggningssida</title>
+
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <header>
-        <h1>AmazingPage</h1>
-        <h2 class="statustext">Välkommen</h2>
 
-        <div id="loginform">
-            <fieldset>
-                <legend>LOGGA IN</legend>
-                <label for="input-user">Användarnamn</label>
-                <br>
-                <input type="text" id="input-user" name="input-user">
-                <br>
-                <br>
-                <label for="input-psw">Lösenord</label>
-                <br>
-                <input type="input-psw" id="input-psw" name="input-psw">
-                <br>
-                <br>
-                <button id="btn-in">Logga in</button>
-                </fieldset>
+        <div class="header-textbox">
+            <h1>AmazingPage</h1>
+            <h3 class="statustext">VÄLKOMMEN</h3>
         </div>
+
     </header>
 
     <main>
-        <h3 class="small-heading">Välkommen till AmazingPage AB</h3>
+        <h2 class="small-heading">Välkommen till AmazingPage AB</h2>
 
         <p class="text-area">Är du medlem hos oss? Välkommen att logga in för att ta del av dina unika medlemserbjudanden.</p>
+
+        <div id="loginform">
+            <legend>LOGGA IN</legend>
+            <br>
+            <label for="input-user">Användarnamn</label>
+            <br>
+            <input type="text" id="input-user" name="input-user">
+            <br>
+            <br>
+            <label for="input-psw">Lösenord</label>
+            <br>
+            <input type="input-psw" id="input-psw" name="input-psw">
+            <br>
+            <br>
+            <button id="btn-in">Logga in</button>
+        </div>
+
     </main>
 
     <footer>
@@ -41,7 +47,6 @@
 
         <p class="text-footer">AmazingPage, Adressvägen 11, 111 11 ADRESSEN</p>
         <p class="text-footer">amazingpage@emailadressen.nu</p>
-        
     </footer>
 
 </body>

@@ -3,9 +3,23 @@ let objUser = [
         username: "fredrik",
         password: "12345"
     },
+    {
+        username: "kalle",
+        password: "abcde"
+    },
+    {
+        username: "stina",
+        password: "hej22"
+    },
+    {
+        username: "klara",
+        password: "hejsan"
+    },
+    {
+        username: "krister",
+        password: "56789"
+    }
 ]
-
-console.log(objUser);
 
 const statusText = document.querySelector(".statustext");
 const smallHeading = document.querySelector(".smallheading");
@@ -21,10 +35,19 @@ const textFooter = document.querySelector(".textfooter");
 btnIn.addEventListener("click", checkLogIn);
 btnOut.addEventListener("click", logOut);
 
+function inIt() {
+    if (localStorage.getItem("username")) {
+        logInSuccess();
+    }
+}
+
+inIt();
+
 function checkLogIn() {
 
     for(i=0; i < objUser.length; i++) {
         if(username.value === objUser[i].username && password.value === objUser[i].password) {
+            localStorage.setItem("username", username.value);     
             logInSuccess();
             return
         }
@@ -36,13 +59,12 @@ function checkLogIn() {
 function logInSuccess() {    
     document.querySelector(".statustext").innerText = "INLOGGAD";
     document.querySelector(".statustext").style.color = "green";
-    document.querySelector(".smallheading").innerText = `Hej ${username.value} och välkommen till din Medlemssida hos AmazingPage.`;
+    document.querySelector(".smallheading").innerText = `Välkommen ${username.value}! Jippi du är nu inloggad på din Medlemssida hos AmazingPage.`;
     document.querySelector(".smallheading").style.color = "green";
     document.getElementById("loginform").style.display = "none";
-    document.querySelector(".textarea").innerText = "Nu kan du ta del av dina Amazing Medlemserbjudanden!";
+    document.querySelector(".textarea").innerText = "Här kan du ta del av dina Amazing Medlemserbjudanden!";
     document.getElementById("btn-out").style.display = "block";
-
-    }
+}
 
 function logInFail() {
     document.querySelector(".statustext").innerText = "MISSLYCKAD INLOGGNING";
@@ -64,5 +86,6 @@ function logOut() {
     document.querySelector(".textarea").style.display = "none";
     username.value = "";
     password.value = "";
+    localStorage.removeItem("username");
 }
 

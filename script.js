@@ -5,11 +5,15 @@ let objUser = [
     },
     {
         username: "kalle",
-        password: "abcde"
+        password: "23456"
     },
     {
         username: "stina",
-        password: "hej22"
+        password: "34567"
+    },
+    {
+        username: "klara",
+        password: "45678"
     },
 ]
 
@@ -123,9 +127,7 @@ function createNewUser(){
 
 getUser.push(newUser);
 
-console.log("Get User", getUser);
-
-
+localStorage.setItem("user", JSON.stringify(getUser));
 
 }
 

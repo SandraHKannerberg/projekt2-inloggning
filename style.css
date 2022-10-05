@@ -1,5 +1,6 @@
 body {
     height: 100vh;
+    background-color: pink;
 }
 
 header {
@@ -22,6 +23,10 @@ header {
     display: none;
 }
 
+#btn-startpage {
+    display: none;
+}
+
 #newuserform {
     width: 250px;
     height: 200px;
@@ -34,7 +39,6 @@ header {
 }
 
 main {
-    background-color: whitesmoke;
     margin: 25px;
     padding: 25px;
 }
@@ -43,5 +47,4 @@ footer {
     margin: 25px;
     padding: 25px;
     border-top: 3px solid black;
-    background-color: whitesmoke;
 }

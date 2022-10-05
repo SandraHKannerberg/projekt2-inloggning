@@ -14,28 +14,62 @@ header {
     height: 200px;
     margin-bottom: 25px;
     padding: 25px;
-    background-color: white;
+    background-color: whitesmoke;
     border: 1px solid black;
     box-shadow: 0 0 20px pink;
 }
 
+#btn-in {
+    width: 100px;
+    height: 40px;
+    background-color: pink;
+    border: 1px solid black;
+    box-shadow: 0 0 10px pink;
+}
+
+#btn-newuserform {
+    width: 100px;
+    height: 40px;
+    background-color: pink;
+    border: 1px solid black;
+    box-shadow: 0 0 10px pink;
+}
+
+#btn-createnewuser {
+    width: 100px;
+    height: 40px;
+    background-color: pink;
+    border: 1px solid black;
+    box-shadow: 0 0 10px pink;
+}
+
 #btn-out {
     display: none;
+    width: 100px;
+    height: 40px;
+    background-color: whitesmoke;
+    border: 1px solid black;
+    box-shadow: 0 0 10px grey;
 }
 
 #btn-startpage {
     display: none;
+    width: 100px;
+    height: 40px;
+    background-color: pink;
+    border: 1px solid black;
+    box-shadow: 0 0 10px pink;
 }
 
 #newuserform {
+    display: none;
     width: 250px;
     height: 200px;
     margin-bottom: 25px;
     padding: 25px;
-    background-color: bisque;
-    border: 1px solid fuchsia;
-    box-shadow: 0 0 10px fuchsia;
-    display: none;
+    background-color: whitesmoke;
+    border: 1px solid black;
+    box-shadow: 0 0 20px pink;
 }
 
 main {

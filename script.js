@@ -14,7 +14,7 @@ let objUser = [
     {
         username: "klara",
         password: "45678"
-    },
+    }
 ]
 
 localStorage.setItem("user", JSON.stringify(objUser));
@@ -75,11 +75,13 @@ function logInSuccess() {
     document.querySelector(".statustext").innerText = "INLOGGAD";
     document.querySelector(".statustext").style.color = "green";
     document.querySelector(".smallheading").innerText = `Välkommen ${localStorage.getItem("username")}! Jippi & Hurra du är nu inloggad på din Medlemssida hos AmazingPage.`;
-    document.querySelector(".smallheading").style.color = "green";
+    document.querySelector(".smallheading").style.color = "black";
     document.getElementById("loginform").style.display = "none";
     document.querySelector(".textarea").innerText = "Här kan du ta del av dina Amazing Medlemserbjudanden!";
     document.getElementById("btn-out").style.display = "block";
     document.getElementById("btn-newuserform").style.display = "none";
+    document.getElementById("newuserform").style.display = "none";
+    
 }
 
 function logInFail() {
@@ -87,7 +89,9 @@ function logInFail() {
     document.querySelector(".statustext").style.color = "red";
     document.querySelector(".smallheading").innerText = "Oops någonting gick fel";
     document.querySelector(".smallheading").style.color = "red";
+    document.querySelector(".textarea").style.display = "block";
     document.querySelector(".textarea").innerText ="Användarnamn och/eller lösenord är felaktigt. Vänligen försök igen";
+    document.getElementById("newuserform").style.display = "none";
     username.value = "";
     password.value = "";
 }
@@ -97,9 +101,10 @@ function logOut() {
     document.querySelector(".statustext").style.color = "blue";
     document.getElementById("btn-out").style.display = "none";
     document.querySelector(".smallheading").innerText = "Du är nu utloggad! Va roligt att du besökte AmazingPage, vi ses snart igen.";
-    document.querySelector(".smallheading").style.color ="blue";
+    document.querySelector(".smallheading").style.color ="black";
     document.querySelector(".textarea").style.display = "none";
     document.getElementById("btn-startpage").style.display = "block";
+    document.getElementById("newuserform").style.display = "none";
     username.value = "";
     password.value = "";
     localStorage.removeItem("username");
@@ -110,9 +115,9 @@ function becomeNewUser() {
     document.getElementById("btn-newuserform").style.display = "none";
     document.getElementById("btn-out").style.display = "none";
     document.querySelector(".statustext").innerText = "SNART ÄR DU MEDLEM";
-    document.querySelector(".statustext").style.color = "fuchsia";
+    document.querySelector(".statustext").style.color = "yellow";
     document.querySelector(".smallheading").innerText = "Vad roligt att du vill bli medlem hos AmazingPage";
-    document.querySelector(".smallheading").style.color = "fuchsia";
+    document.querySelector(".smallheading").style.color = "black";
     document.getElementById("loginform").style.display = "none";
     document.querySelector(".textarea").innerText = "Vänligen välj ett användarnamn och ett lösenord så är du snart medlem hos oss och kan ta del av unika medlemserbjudanden!";
     document.getElementById("btn-out").style.display = "none";
@@ -138,8 +143,10 @@ function backToStart() {
     document.getElementById("btn-out").style.display = "none";
     document.querySelector(".smallheading").innerText = "Välkommen till AmazingPage AB";
     document.querySelector(".smallheading").style.color ="black";
+    document.querySelector(".textarea").style.display = "block";
     document.querySelector(".textarea").innerText = "Är du medlem hos oss? Välkommen att logga in för att ta del av dina unika medlemserbjudanden.";
     document.getElementById("loginform").style.display = "block";
     document.getElementById("btn-startpage").style.display = "none";
     document.getElementById("btn-newuserform").style.display = "block";
+    document.getElementById("newuserform").style.display = "none";
 }

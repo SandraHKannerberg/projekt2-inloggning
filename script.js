@@ -11,10 +11,6 @@ let objUser = [
         username: "stina",
         password: "34567"
     },
-    {
-        username: "klara",
-        password: "45678"
-    }
 ]
 
 localStorage.setItem("user", JSON.stringify(objUser));
@@ -74,7 +70,7 @@ function checkLogIn() {
 function logInSuccess() {    
     document.querySelector(".statustext").innerText = "INLOGGAD";
     document.querySelector(".statustext").style.color = "green";
-    document.querySelector(".smallheading").innerText = `Välkommen ${localStorage.getItem("username")}! Jippi & Hurra du är nu inloggad på din Medlemssida hos AmazingPage.`;
+    document.querySelector(".smallheading").innerText = `Välkommen ${localStorage.getItem("username")}! Jippi, du är nu inloggad på din Medlemssida hos AmazingPage.`;
     document.querySelector(".smallheading").style.color = "black";
     document.getElementById("loginform").style.display = "none";
     document.querySelector(".textarea").innerText = "Här kan du ta del av dina Amazing Medlemserbjudanden!";
@@ -130,9 +126,29 @@ function createNewUser(){
         password: inputNewPassword.value
     }
 
-getUser.push(newUser);
+    const createUser = inputNewUser.value;
+    const createPassword = inputNewPassword.value;
 
-localStorage.setItem("user", JSON.stringify(getUser));
+    if (createUser && createPassword) {
+        localStorage.setItem(createUser, createPassword);
+    }
+
+    const getUser = JSON.parse(localStorage.getItem("user"));
+
+    getUser.push(newUser);
+
+    localStorage.setItem("user", JSON.stringify(getUser));
+
+    document.getElementById("newuserform").style.display = "none";
+    document.getElementById("btn-newuserform").style.display = "none";
+    document.getElementById("btn-out").style.display = "none";
+    document.querySelector(".statustext").innerText = "VÄLKOMMEN";
+    document.querySelector(".statustext").style.color = "black";
+    document.querySelector(".smallheading").innerText = "Välkommen!!! Hurra, du är nu medlem hos AmazingPage";
+    document.querySelector(".smallheading").style.color = "black";
+    document.getElementById("loginform").style.display = "block";
+    document.querySelector(".textarea").innerText = "Du kan logga in här direkt eller gå tillbaka till Startsidan";
+    document.getElementById("btn-out").style.display = "none";
 
 }
 

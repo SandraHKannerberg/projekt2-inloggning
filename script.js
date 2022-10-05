@@ -106,12 +106,13 @@ function becomeNewUser() {
     document.getElementById("btn-newuserform").style.display = "none";
     document.getElementById("btn-out").style.display = "none";
     document.querySelector(".statustext").innerText = "SNART ÄR DU MEDLEM";
-    document.querySelector(".statustext").style.color = "orange";
+    document.querySelector(".statustext").style.color = "fuchsia";
     document.querySelector(".smallheading").innerText = "Vad roligt att du vill bli medlem hos AmazingPage";
-    document.querySelector(".smallheading").style.color = "orange";
+    document.querySelector(".smallheading").style.color = "fuchsia";
     document.getElementById("loginform").style.display = "none";
     document.querySelector(".textarea").innerText = "Vänligen välj ett användarnamn och ett lösenord så är du snart medlem hos oss och kan ta del av unika medlemserbjudanden!";
     document.getElementById("btn-out").style.display = "none";
+    document.getElementById("btn-startpage").style.display = "block";
 }
 
 function createNewUser(){

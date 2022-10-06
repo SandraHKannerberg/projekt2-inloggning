@@ -11,9 +11,19 @@ let objUser = [
         username: "stina",
         password: "34567"
     },
+    {
+        username: "klara",
+        password: "45678"
+    }
 ]
 
-localStorage.setItem("userArray", JSON.stringify(objUser));
+if (!localStorage.getItem("userArray")) {
+    localStorage.setItem("userArray", JSON.stringify(objUser));
+} 
+
+const userArrayUpdate = localStorage.getItem("userArray");
+const userArrayObject = JSON.parse(userArrayUpdate);
+
 
 const statusText = document.querySelector(".statustext");
 const smallHeading = document.querySelector(".smallheading");
@@ -53,8 +63,9 @@ inIt();
 
 function checkLogIn() {
 
-    for(i=0; i < objUser.length; i++) {
-        if(username.value === objUser[i].username && password.value === objUser[i].password) {
+
+    for(i=0; i < userArrayObject.length; i++) {
+        if(username.value === userArrayObject[i].username && password.value === userArrayObject[i].password) {
             localStorage.setItem("username", username.value);     
             logInSuccess();
             return
@@ -124,16 +135,13 @@ function createNewUser(){
         password: inputNewPassword.value
     }
 
-    localStorage.setItem("userArray", JSON.stringify(objUser));
-
     let getUser = JSON.parse(localStorage.getItem("userArray"));
-    
+
     getUser.push(newUser);
 
     localStorage.setItem("userArray", JSON.stringify(getUser));
+    
 
-    console.log(getUser.username);
- 
     document.getElementById("newuserform").style.display = "none";
     document.getElementById("btn-newuserform").style.display = "none";
     document.getElementById("btn-out").style.display = "none";

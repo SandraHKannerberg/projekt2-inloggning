@@ -21,10 +21,6 @@ if (!localStorage.getItem("userArray")) {
     localStorage.setItem("userArray", JSON.stringify(objUser));
 } 
 
-const userArrayUpdate = localStorage.getItem("userArray");
-const userArrayObject = JSON.parse(userArrayUpdate);
-
-
 const statusText = document.querySelector(".statustext");
 const smallHeading = document.querySelector(".smallheading");
 const textArea = document.querySelector(".textarea");
@@ -63,6 +59,8 @@ inIt();
 
 function checkLogIn() {
 
+    const userArrayUpdate = localStorage.getItem("userArray");
+    const userArrayObject = JSON.parse(userArrayUpdate);
 
     for(i=0; i < userArrayObject.length; i++) {
         if(username.value === userArrayObject[i].username && password.value === userArrayObject[i].password) {
